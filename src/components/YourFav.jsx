@@ -13,12 +13,12 @@ const Yourfav = () => {
 
   // Check if there are no favorite episodes
   if (favoriteEpisodes.length === 0) {
-    return <div>No favorite episodes yet!</div>;
+    return <div>No listed yet!</div>;
   }
 
   return (
     <div className="favorites-container">
-      <h1>Your Favorite Episodes</h1>
+      <h1>Favorite Episodes</h1>
       <ul className="favorites-list">
         {favoriteEpisodes.map((episode) => (
           <li key={episode.id} className="favorite-item">
