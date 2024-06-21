@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchPreviews } from '../services/PodcastService.js';
 import { useFavorites } from '../contexts/FavouriteContext.jsx';
-import AudioPlayer from './AudioPlayer'; // Import the AudioPlayer component
+import AudioPlayer from './AudioPlayer'; 
 import './Home.css';
-import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensure this import is present
+import '@fortawesome/fontawesome-free/css/all.min.css'; 
 
 const Home = () => {
   const [previews, setPreviews] = useState([]);
@@ -12,7 +12,21 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [sortCriteria, setSortCriteria] = useState('All');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedGenre, setSelectedGenre] = useState('All');
   const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites();
+
+  const genres = {
+    1: 'Personal Growth',
+    2: 'Investigative Journalism',
+    3: 'History',
+    4: 'Comedy',
+    5: 'Entertainment',
+    6: 'Business',
+    7: 'Fiction',
+    8: 'News',
+    9: 'Kids and Family',
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,6 +70,20 @@ const Home = () => {
     setFilteredPreviews(sortData(sortCriteria, previews));
   }, [sortCriteria, previews]);
 
+  // Handle genre filter change
+  const handleGenreChange = (event) => {
+    const genreId = event.target.value;
+    setSelectedGenre(genreId);
+    if (genreId === 'All') {
+      setFilteredPreviews(previews);
+    } else {
+      const filtered = previews.filter(podcast =>
+        podcast.genres.includes(parseInt(genreId))
+      );
+      setFilteredPreviews(filtered);
+    }
+  };
+
   const handleSortChange = (criteria) => {
     setSortCriteria(criteria);
   };
@@ -68,8 +96,20 @@ const Home = () => {
     }
   };
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+    filterPreviews(event.target.value);
+  };
+
+  const filterPreviews = (term) => {
+    const filtered = previews.filter(podcast =>
+      podcast.title.toLowerCase().includes(term.toLowerCase())
+    );
+    setFilteredPreviews(filtered);
+  };
+
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Please Wait...</div>;
   }
 
   if (error) {
@@ -83,13 +123,29 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1>Latest Podcasts</h1>
-      <div className="filter-buttons">
-        <button onClick={() => handleSortChange('All')}>All</button>
-        <button onClick={() => handleSortChange('A-Z')}>A-Z</button>
-        <button onClick={() => handleSortChange('Z-A')}>Z-A</button>
-        <button onClick={() => handleSortChange('Newest')}>Newest</button>
-        <button onClick={() => handleSortChange('Oldest')}>Oldest</button>
+      <h1>Our Library</h1>
+      <div className="filter-bar">
+        <select onChange={(e) => handleSortChange(e.target.value)}>
+          <option value="All">Order</option>
+          <option value="A-Z">A-Z</option>
+          <option value="Z-A">Z-A</option>
+          <option value="Newest">Newest</option>
+          <option value="Oldest">Oldest</option>
+        </select>
+        <select onChange={handleGenreChange} value={selectedGenre}>
+          <option value="All">Genres</option>
+          {Object.entries(genres).map(([id, title]) => (
+            <option key={id} value={id}>{title}</option>
+          ))}
+        </select>
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+        </div>
       </div>
       <ul className="podcast-list">
         {filteredPreviews.map((podcast) => (
@@ -104,10 +160,9 @@ const Home = () => {
                 </Link>
               </h3>
               {/* Access nested properties */}
-              <p>Author: {podcast.author}</p> {/* Replace with correct path */}
-              <p>Season: {podcast.seasons}</p> {/* Replace with correct path */}
-              <p>Genre: {podcast.genres.join(', ')}</p> {/* Replace with correct path */}
-              <p>Last Updated: {formatDate(podcast.updated)}</p> {/* Replace with correct path */}
+              <p>Author: {podcast.author}</p>               
+              <p>Genre: {podcast.genres.map(genreId => genres[genreId]).join(', ')}</p> 
+              <p>Last Update: {formatDate(podcast.updated)}</p> 
               <div className="action-buttons">
                 <AudioPlayer src={podcast.audioSrc} />
                 <i
@@ -122,5 +177,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;

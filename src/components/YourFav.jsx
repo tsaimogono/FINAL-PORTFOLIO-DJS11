@@ -13,7 +13,7 @@ const Yourfav = () => {
 
   // Check if there are no favorite episodes
   if (favoriteEpisodes.length === 0) {
-    return <div>Not Listed yet!</div>;
+    return <div>Not Yet Listed!</div>;
   }
 
   return (
