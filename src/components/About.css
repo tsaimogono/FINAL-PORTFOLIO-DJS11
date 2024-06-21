@@ -1,0 +1,49 @@
+/* about.css */
+
+.about {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #f5f5f5; /* Keeping the background color */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .about h2 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+  }
+  
+  .about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .about p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .about p:first-of-type::first-letter {
+    font-size: 3rem;
+    color: #f06292;
+    float: left;
+    margin-right: 5px;
+    line-height: 1;
+  }
+  
+  .about p::first-letter {
+    font-size: 3rem;
+    color: #f06292;
+    float: left;
+    margin-right: 5px;
+    line-height: 1;
+  }
+  

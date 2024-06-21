@@ -1,0 +1,9 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-top: 60px; /* Adjust top padding to match navbar height */
+}
+
+.container {
+  padding: 20px;
+}

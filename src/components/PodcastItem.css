@@ -1,0 +1,63 @@
+.podcast-item {
+    display: flex;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #fff;
+  }
+  
+  .podcast-item .podcast-image {
+    flex: 0 0 100px; /* Fixed width for the image */
+    margin-right: 15px;
+  }
+  
+  .podcast-item .podcast-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .podcast-item .podcast-details {
+    flex: 1; /* Take remaining space */
+  }
+  
+  .podcast-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .podcast-item p {
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  .podcast-item .action-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .podcast-item .action-buttons p {
+    margin: 0;
+  }
+  
+  .podcast-item .favorite-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-left: auto; /* Push to the right */
+    transition: color 0.3s ease;
+  }
+  
+  .podcast-item .favorite-icon.favorite {
+    color: red; /* Color when favorited */
+  }
+  
+  .podcast-item .podcast-link {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+  }
+  
+  .podcast-item .podcast-link:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,61 @@
+.show-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+  }
+  
+  .show-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .show-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .seasons-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .seasons-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .season-item {
+    margin-bottom: 20px;
+  }
+  
+  .season-number {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .episodes-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .episode-item {
+    margin-bottom: 10px;
+  }
+  
+  .episode-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .episode-duration {
+    color: #888;
+    font-size: 14px;
+  }
+  
+  .show-image {
+    max-width: 25%; 
+    height: auto; 
+  }

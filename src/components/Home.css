@@ -1,0 +1,97 @@
+/* src/components/Header.css */
+
+.home {
+    padding: 20px;
+    background-color: #121212; /* Dark background color */
+    color: #f8f8f8; /* Light text color for contrast */
+  }
+  
+  .podcast-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .podcast-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #1f1f1f; /* Darker background for items */
+    border: 1px solid #333; /* Subtle border color */
+    border-radius: 4px;
+    overflow: hidden;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 300px;
+  }
+  
+  .podcast-item:hover {
+    background-color: #292929;
+    box-shadow: 0 0 10px 2px rgba(255, 105, 180, 0.7); /* Pink glow effect on hover */
+  }
+  
+  .podcast-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .podcast-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .podcast-details {
+    padding: 10px;
+  }
+  
+  .podcast-details h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #49409c; /* Neon pink color */
+  }
+  
+  .podcast-details p {
+    margin: 0;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .play-button {
+    padding: 8px 16px;
+    background-color: #f12b95; /* Neon pink background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .play-button:hover {
+    background-color: #ff1493;
+    box-shadow: 0 0 10px 2px rgba(8, 244, 185, 0.7); /* Pink glow effect on hover */
+  }
+  
+  .favorite-icon {
+    font-size: 2rem; /* Adjust the size as needed */
+    color: #ff69b4; /* Neon pink color */
+    cursor: pointer;
+    transition: color 0.3s, text-shadow 0.3s;
+    z-index: 1000;
+  }
+  
+  .favorite-icon.favorite {
+    color: #ff1493; /* Darker neon pink color when it's a favorite */
+  }
+  
+  .favorite-icon:hover {
+    color: #ff1493; /* Darker neon pink on hover */
+    text-shadow: 0 0 10px #ff1493; /* Glow effect on hover */
+  }
+  
