@@ -17,14 +17,14 @@
   border: none;
   border-radius: 4px;
   background-color: #1f1f1f; /* Dark background */
-  color: rgba(108, 189, 200, 0.492); /* Neon pink text color */
+  color: rgba(251, 8, 198, 0.492); /* Neon pink text color */
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .filter-bar select:hover {
   background-color: #292929; /* Darker background on hover */
-  box-shadow: 0 0 10px 2px rgba(108, 189, 200, 0.492); /* Pink glow effect on hover */
+  box-shadow: 0 0 10px 2px rgba(240, 6, 146, 0.492); /* Pink glow effect on hover */
 }
 
 .search-bar {
@@ -67,7 +67,7 @@
 
 .podcast-item:hover {
   background-color: #292929;
-  box-shadow: 0 0 10px 2px rgba(108, 189, 200, 0.492); 
+  box-shadow: 0 0 10px 2px rgba(255, 21, 255, 0.63); 
 }
 
 .podcast-image {
@@ -88,7 +88,7 @@
 .podcast-details h3 {
   margin-top: 0;
   margin-bottom: 5px;
-  color: rgba(7, 251, 255, 0.551); 
+  color: rgba(223, 8, 159, 0.758); 
 }
 
 .podcast-details p {
@@ -105,7 +105,7 @@
 .play-button {
   padding: 8px 16px;
   background-color: #ff69b4; 
-  color: rgba(7, 251, 255, 0.304);
+  color: rgba(255, 7, 147, 0.304);
   border: none;
   border-radius: 4px;
   cursor: pointer;
