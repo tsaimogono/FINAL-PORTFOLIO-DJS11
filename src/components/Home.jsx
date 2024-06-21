@@ -123,7 +123,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1>Our Library</h1>
+      <h1>Library</h1>
       <div className="filter-bar">
         <select onChange={(e) => handleSortChange(e.target.value)}>
           <option value="All">Order</option>

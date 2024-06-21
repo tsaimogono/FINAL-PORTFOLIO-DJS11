@@ -20,11 +20,11 @@
   .footer p {
     margin: 0;
     font-size: 14px;
-    color: #0e058e; /* Neon pink text color */
+    color: #f60905; /* Neon pink text color */
   }
   
   .footer a {
-    color: #3d0ba9; /* Neon pink link color */
+    color: #f30909; /* Neon pink link color */
     text-decoration: none;
     transition: color 0.3s, text-shadow 0.3s;
   }
